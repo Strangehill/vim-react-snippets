@@ -60,51 +60,42 @@ export default $1;
 endsnippet
 
 snippet rfc "React Functional Component" b
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './${2:$1}.css';
+import React from 'react'
+import styled from "styled-components"
 
-function ${1:`!v expand('%:t:r')`}({ $3 }) {
+const Div = styled.div\`
+  border: 2px solid red;
+\`
+
+const ${1:`!v expand('%:t:r')`} = ({ ${3:...props} }) => {
 	return (
-		<${5:div} className={styles.base}>
+		<${5:Div}>
 			$0
 		</$5>
-	);
+	)
 }
 
-$1.defaultProps = {$4};
-
-$1.propTypes = {`!p
-props = t[3]
-
-if props:
-  snip >> 1
-  for prop in props.split(', '):
-    snip += prop + ': PropTypes.any,'
-`
-};
-
-export default $1;
+export default $1
 endsnippet
 
 snippet rsc "React Styled Component" b
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
 	$3
-\`;
+\`
 
-export default $1;
+export default $1
 endsnippet
 
 snippet rsci "React Styled Component Interpolation" b
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`${props => css\`
 	${3:${props.$4 && \`
 		$5
 	\`}}
-\`}\`;
+\`}\`
 
 export default $1;
 endsnippet
@@ -126,7 +117,7 @@ endsnippet
 snippet set "Set State"
 this.setState({
 	${1}: ${2}
-});
+})
 endsnippet
 
 snippet props "Get Property" i

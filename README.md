@@ -1,5 +1,21 @@
 # Vim React Snippets
 
+A Vim snippet library for React, taken from [Epilande](https://github.com/epilande/vim-react-snippets) with some customizations like usage of arrow functions, removing prop-types, and ending semi-colons, made only partially, and only to the handful of snippets I actually use on a regular basis.
+So this fork probably doesn't go far enough for others with similar preferences but who likely make use of more snippets than the oones I use here.
+
+| Trigger  | Content |
+| -------: | ------- |
+| `rfc→`   | React Functional Component |
+| `rsc→`   | React Styled Component |
+| `rsci→`   | React Styled Component Interpolation |
+| `us.s→`  | `const [state, setState] = useState('');` |
+| `us.e→`  | `useEffect(() => { });`                   |
+| `us.er→` | `useEffect(() => { return () => {}; });`  |
+| `us.c→`  | `const context = useContext(ctx);`        |
+| `us.r→`  | `const [store, dispatch] = useReducer(storeReducer, initialState);` |
+
+--- Continue with original README ---
+
 A Vim snippet library for React in ES6. You may also want to check out [vim-es2015-snippets](https://github.com/epilande/vim-es2015-snippets).
 
 Requires [UltiSnips](https://github.com/SirVer/ultisnips).
